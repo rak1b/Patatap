@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Circle With Sound</title>
+	<link rel="stylesheet" href="">
+	<script src="../PaperJs/dist/paper-full.js"></script>
+
+	<script type="text/paperscript" canvas='myCanvas'>
+
+		var circleArray = [];
+
+		function onKeyDown(){
+			var width = view.size.width;
+		var height = view.size.height;
+		var maxPoint = new Point(width,height);
+		var randomPoint = Point.random();
+		var point = maxPoint * randomPoint;
+		var circle = new Path.Circle(point,500);
+		circle.fillColor = myColor();
+		circleArray.push(circle);
+		}
+
+		function onFrame(){
+			for(var i = 0;i<circleArray.length;i++){
+				circleArray[i].fillColor.hue +=1;
+				circleArray[i].scale(.9);
+
+			}
+		}
+
+		function myColor(){
+		var letter='ABCDEF0123456789';
+		var color = '#';
+		for(var i = 0;i<6;i++){
+		color = color + letter[Math.floor(Math.random()*16)]
+		}
+		return color;
+	}
+	
+		
+	</script>
+		
+
+		<style>
+			#myCanvas{
+				width: 100%;
+				height: 100%;
+			}			
+		</style>
+</head>
+<body>
+	<canvas id="myCanvas"></canvas>
+	
+</body>
+</html>
