@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Circle With Sound</title>
+	<link rel="stylesheet" href="">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.2/paper-core.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.3/howler.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.2/paper-full.js"></script>
+	<script src="../PaperJs/dist/paper-full.js"></script>
+	<script src="../HowlerJs/howler.js-master/dist/howler.js"></script>
+	<link rel="stylesheet" href="../bootstrap\css\bootstrap.min.css">
+	<script src="../bootstrap\js\bootstrap.min.js"></script> 
+
+
+
+
+	<script type="text/paperscript" canvas='myCanvas'>
+
+		var keyData = {
+			a :{
+				sound:new Howl({
+					src:['Sounds/bubbles.mp3']
+				})
+			},
+
+			b :{
+				sound:new Howl({
+					src:['Sounds/clay.mp3']
+				})
+			},
+
+			c :{
+				sound:new Howl({
+					src:['Sounds/confetti.mp3']
+				})
+			},
+
+			d :{
+				sound:new Howl({
+					src:['Sounds/corona.mp3']
+				})
+			},
+
+				e :{
+				sound:new Howl({
+					src:['Sounds/dotted-spiral.mp3']
+				})
+			},
+			f :{
+				sound:new Howl({
+					src:['../Sounds/flash-1.mp3']
+				})
+			},
+			g :{
+				sound:new Howl({
+					src:['Sounds/flash-2.mp3']
+				})
+			},
+			h:{
+				sound:new Howl({
+					src:['Sounds/flash-3.mp3']
+				})
+			},
+			i:{
+				sound:new Howl({
+					src:['Sounds/glimmer.mp3']
+				})
+			},
+			j:{
+				sound:new Howl({
+					src:['Sounds/moon.mp3']
+				})
+			},
+			k:{
+				sound:new Howl({
+					src:['Sounds/pinwheel.mp3']
+				})
+			},
+			l:{
+				sound:new Howl({
+					src:['Sounds/piston-1.mp3']
+				})
+			},
+			m:{
+				sound:new Howl({
+					src:['Sounds/piston-2.mp3']
+				})
+			},
+			n :{
+				sound:new Howl({
+					src:['Sounds/piston-3.mp3']
+				})
+			},
+			o:{
+				sound:new Howl({
+					src:['Sounds/prism-1.mp3']
+				})
+			},
+			p:{
+				sound:new Howl({
+					src:['Sounds/prism-2.mp3']
+				})
+			},
+			q:{
+				sound:new Howl({
+					src:['Sounds/prism-3.mp3']
+				})
+			},
+			r :{
+				sound:new Howl({
+					src:['Sounds/splits.mp3']
+				})
+			},
+			s :{
+				sound:new Howl({
+					src:['Sounds/squiggle.mp3']
+				})
+			},
+			t:{
+				sound:new Howl({
+					src:['Sounds/strike.mp3']
+				})
+			},
+			u:{
+				sound:new Howl({
+					src:['Sounds/suspension.mp3']
+				})
+			},
+			v :{
+				sound:new Howl({
+					src:['Sounds/timer.mp3']
+				})
+			},
+			w :{
+				sound:new Howl({
+					src:['Sounds/ufo.mp3']
+				})
+			},
+			x:{
+				sound:new Howl({
+					src:['Sounds/veil.mp3']
+				})
+			},
+			y:{
+				sound:new Howl({
+					src:['Sounds/wipe.mp3']
+				})
+			},
+			z:{
+				sound:new Howl({
+					src:['Sounds/zig-zag.mp3']
+				})
+			},
+			A :{
+				sound:new Howl({
+					src:['Sounds/bubbles.mp3']
+				})
+			},
+
+			B :{
+				sound:new Howl({
+					src:['Sounds/clay.mp3']
+				})
+			},
+
+			C :{
+				sound:new Howl({
+					src:['Sounds/confetti.mp3']
+				})
+			},
+
+			D :{
+				sound:new Howl({
+					src:['Sounds/corona.mp3']
+				})
+			},
+
+				E :{
+				sound:new Howl({
+					src:['Sounds/dotted-spiral.mp3']
+				})
+			},
+			F :{
+				sound:new Howl({
+					src:['Sounds/flash-1.mp3']
+				})
+			},
+			G :{
+				sound:new Howl({
+					src:['Sounds/flash-2.mp3']
+				})
+			},
+			H:{
+				sound:new Howl({
+					src:['Sounds/flash-3.mp3']
+				})
+			},
+			I:{
+				sound:new Howl({
+					src:['Sounds/glimmer.mp3']
+				})
+			},
+			J:{
+				sound:new Howl({
+					src:['Sounds/moon.mp3']
+				})
+			},
+			K:{
+				sound:new Howl({
+					src:['Sounds/pinwheel.mp3']
+				})
+			},
+			L:{
+				sound:new Howl({
+					src:['../Sounds/piston-1.mp3']
+				})
+			},
+			M:{
+				sound:new Howl({
+					src:['Sounds/piston-2.mp3']
+				})
+			},
+			N :{
+				sound:new Howl({
+					src:['Sounds/piston-3.mp3']
+				})
+			},
+			O:{
+				sound:new Howl({
+					src:['Sounds/prism-1.mp3']
+				})
+			},
+			P:{
+				sound:new Howl({
+					src:['Sounds/prism-2.mp3']
+				})
+			},
+			Q:{
+				sound:new Howl({
+					src:['Sounds/prism-3.mp3']
+				})
+			},
+			R :{
+				sound:new Howl({
+					src:['Sounds/splits.mp3']
+				})
+			},
+			S :{
+				sound:new Howl({
+					src:['../Sounds/squiggle.mp3']
+				})
+			},
+			T:{
+				sound:new Howl({
+					src:['Sounds/strike.mp3']
+				})
+			},
+			U:{
+				sound:new Howl({
+					src:['Sounds/suspension.mp3']
+				})
+			},
+			V :{
+				sound:new Howl({
+					src:['Sounds/timer.mp3']
+				})
+			},
+			W :{
+				sound:new Howl({
+					src:['Sounds/ufo.mp3']
+				})
+			},
+			X:{
+				sound:new Howl({
+					src:['Sounds/veil.mp3']
+				})
+			},
+			Y:{
+				sound:new Howl({
+					src:['Sounds/wipe.mp3']
+				})
+			},
+			Z:{
+				sound:new Howl({
+					src:['Sounds/zig-zag.mp3']
+				})
+			}
+		}
+
+		// var soundA= new Howl({
+		// 	src:['../Sounds/bubbles.mp3']
+
+		// })
+
+		// var soundB = new Howl({
+		// 	src:['../Sounds/clay.mp3']
+
+		// })
+		
+		$('button').on('click',function(){
+			if(keyData[$(this).text()]){
+				keyData[$(this).text()].sound.play()
+			var width = view.size.width;
+			var height = view.size.height;
+			var maxPoint = new Point(width,height);
+			var randomPoint = Point.random();
+			var point = maxPoint * randomPoint;
+			var circle = new Path.Circle(point,500);
+			circle.fillColor = myColor();
+			circleArray.push(circle);
+		}else{
+			keyData[Else_things()].sound.play()
+			var width = view.size.width;
+			var height = view.size.height;
+			var maxPoint = new Point(width,height);
+			var randomPoint = Point.random();
+			var point = maxPoint * randomPoint;
+			var circle = new Path.Circle(point,500);
+			circle.fillColor = myColor();
+			circleArray.push(circle);
+		}
+
+		})
+		
+
+		var circleArray = [];
+
+		view.onKeyDown = function(){
+			if(keyData[event.key]){
+				keyData[event.key].sound.play()
+			var width = view.size.width;
+			var height = view.size.height;
+			var maxPoint = new Point(width,height);
+			var randomPoint = Point.random();
+			var point = maxPoint * randomPoint;
+			var circle = new Path.Circle(point,500);
+			circle.fillColor = myColor();
+			circleArray.push(circle);
+		}else{
+			keyData[Else_things()].sound.play()
+			var width = view.size.width;
+			var height = view.size.height;
+			var maxPoint = new Point(width,height);
+			var randomPoint = Point.random();
+			var point = maxPoint * randomPoint;
+			var circle = new Path.Circle(point,500);
+			circle.fillColor = myColor();
+			circleArray.push(circle);
+		}
+		
+		}
+
+		function onFrame(){
+			for(var i = 0;i<circleArray.length;i++){
+				circleArray[i].fillColor.hue +=1;
+				circleArray[i].scale(.9);
+
+			}
+		}
+
+		function myColor(){
+		var letter='ABCDEF0123456789';
+		var color = '#';
+		for(var i = 0;i<6;i++){
+		color = color + letter[Math.floor(Math.random()*16)]
+		}
+		return color;
+	}
+	
+	function Else_things(){
+        var letter='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        key =letter[Math.floor(Math.random()*16)]
+        
+        return key;
+    }
+		
+	</script>
+		
+
+		<style>
+			*{
+				margin:0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			#myCanvas{
+				width: 100%;
+				height: 70vh;
+				background: black;
+			}		
+			body{
+				background: black;
+
+			}	
+
+			.card{
+				width: 500px;
+				height: auto;
+				margin:auto;
+			}
+			.card-body{
+				background: black;
+			}
+			.disp-head{
+				font-weight: bold;
+				font-size: 20px;
+			}
+
+			button{
+				width: 45px;
+				height: 40px;
+				font-weight: bold;
+				background:grey;
+				border: 1px solid teal;
+				
+			}
+			button:hover{
+				background: black;
+				color: white;
+			}
+			.special{
+				width: 80px;
+			}
+
+
+
+		</style>
+			
+</head>
+<body>
+	<canvas id="myCanvas" resize></canvas>
+
+		<div class="card myCard">
+
+		<div class="card-header disp-head bg-info"><p></p></div>
+
+		<div class="card-body">
+			<div class="key_frame">
+				<table class="key_table">
+				<tr>
+					<td><button>Q</button></td>
+					<td><button>W</button></td>
+					<td><button>E</button></td>
+					<td><button>R</button></td>
+					<td><button>T</button></td>
+					<td><button>Y</button></td>
+					<td><button>U</button></td>
+					<td><button>I</button></td>
+					<td><button>O</button></td>
+					<td><button>P</button></td>
+
+
+				</tr>
+			<tr>
+				<td></td>
+				<td><button>A</button></td>
+				<td><button>S</button></td>
+				<td><button>D</button></td>
+				<td><button>F</button></td>
+				<td><button>G</button></td>
+				<td><button>H</button></td>
+				<td><button>J</button></td>
+				<td><button>K</button></td>
+				<td><button>L</button></td>
+				
+			</tr>
+
+			<tr>
+				<td colspan="2"></td>
+				<td><button>Z</button></td>
+				<td><button>X</button></td>
+				<td><button>C</button></td>
+				<td><button>V</button></td>
+				<td><button>B</button></td>
+				<td><button>N</button></td>
+				<td><button>M</button></td>
+				<td></td>
+				
+			</tr>
+			<!-- <tr>
+				<td colspan="4"><button>Space</button></td>
+			</tr> -->
+				<tr>
+				<td colspan="3"></td>
+				<td colspan="3"><button class="special">Space</button></td>
+				<td colspan="2"><button class="special">Delete</button></td>
+
+				
+			</tr>
+		</table>
+		
+	</div>
+			
+		</div>
+		
+	</div>
+		
+<script src="../JQ/jquery-3.5.0.min.js"></script>
+	<script src="keyboard.js"></script>
+	<script
+  src="https://code.jquery.com/jquery-3.5.0.js"
+  integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
+  crossorigin="anonymous"></script>
+
+	
+</body>
+</html>
